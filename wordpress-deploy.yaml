@@ -37,3 +37,18 @@ spec:
         - name: pv-wpdev-claim
           persistentVolumeClaim:
             claimName: pv-wpdev-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpresssvc
+  namespace: development
+  labels:
+    app: wordpresssvc
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: wordpress
