@@ -26,7 +26,7 @@ spec:
               name: pv-mysqldev-claim
           env:
             - name: WORDPRESS_DB_HOST
-              value: mysql-service.default.svc.cluster.local
+              value: mysqlsvc.development.svc.cluster.local
             - name: WORDPRESS_DB_PASSWORD
               value: Welkom01
             - name: WORDPRESS_DB_USER
