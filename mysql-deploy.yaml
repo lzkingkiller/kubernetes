@@ -30,3 +30,18 @@ spec:
         - name: pv-mysqldev-claim
           persistentVolumeClaim:
             claimName: pv-mysqldev-claim
+            ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysqlsvc
+  namespace: development
+  labels:
+    app: mysqlsvc
+spec:
+  type: NodePort
+  ports:
+  - port: 3306
+    protocol: TCP
+  selector:
+    app: mysql
